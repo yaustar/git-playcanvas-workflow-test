@@ -11,7 +11,7 @@
   },
   "scripts": {
     "clean-pull": "node node_modules/playcanvas-sync/pcsync.js pullAll --yes",
-    "push": "node node_modules/playcanvas-sync/pcsync.js pushAll --yes"
+    "push": "node node_modules/playcanvas-sync/pcsync.js pushAll --yes",
     "push-launch": "node node_modules/playcanvas-sync/pcsync.js pushAll --yes && open https://launch.playcanvas.com/1369257?debug=true"
   }
 }
