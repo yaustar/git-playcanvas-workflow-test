@@ -40,7 +40,7 @@ Bitmoji3d.attributes.add('stateAnimMappings', {
     }],
     array: true
 });
-
+Bitmoji3d.attributes.add('rotateSpeed', {type: 'number', default: 30});
 
 // Face animation ids
 Bitmoji3d.faces = {
@@ -96,7 +96,7 @@ Bitmoji3d.prototype.initialize = function() {
                 if (material.name == 'face_group_MAT') {
                     this._faceMaterial = material;
                 }
-                
+
                 if (this.unlit) {
                     var texture = material.diffuseMap;
                     if (texture) {
@@ -160,7 +160,7 @@ Bitmoji3d.prototype.initialize = function() {
                 if (numAnimationsLoaded == self.stateAnimMappings.length) {
                     self._animationsLoaded = true;
                     self._addAnimations();
-                    
+
                     // Re-add the animations whenever the state graph is loaded by the Editor
                     self.entity.anim.on('stategraphloaded', function() {
                         self._addAnimations();
@@ -178,6 +178,8 @@ Bitmoji3d.prototype.update = function(dt) {
     if (this._faceTexturesLoaded) {
         this._updateFaces(dt);
     }
+
+    this.entity.rotate(0, this.rotateSpeed * dt, 0);
 };
 
 
@@ -221,7 +223,7 @@ Bitmoji3d.prototype._onDefaultBitmojiLoaded = function (bitmojiAsset) {
             }
         }
     }
-    
+
     this._addAnimations();
 };
 
