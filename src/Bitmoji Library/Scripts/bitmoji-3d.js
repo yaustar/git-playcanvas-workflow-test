@@ -61,6 +61,7 @@ Bitmoji3d.faces = {
 
 // initialize code called once per entity
 Bitmoji3d.prototype.initialize = function() {
+    console.log('hello')
     var self = this;
 
     this._log = new Log('[Bitmoji3d]');
@@ -96,7 +97,7 @@ Bitmoji3d.prototype.initialize = function() {
                 if (material.name == 'face_group_MAT') {
                     this._faceMaterial = material;
                 }
-                
+
                 if (this.unlit) {
                     var texture = material.diffuseMap;
                     if (texture) {
@@ -160,7 +161,7 @@ Bitmoji3d.prototype.initialize = function() {
                 if (numAnimationsLoaded == self.stateAnimMappings.length) {
                     self._animationsLoaded = true;
                     self._addAnimations();
-                    
+
                     // Re-add the animations whenever the state graph is loaded by the Editor
                     self.entity.anim.on('stategraphloaded', function() {
                         self._addAnimations();
@@ -221,7 +222,7 @@ Bitmoji3d.prototype._onDefaultBitmojiLoaded = function (bitmojiAsset) {
             }
         }
     }
-    
+
     this._addAnimations();
 };
 
