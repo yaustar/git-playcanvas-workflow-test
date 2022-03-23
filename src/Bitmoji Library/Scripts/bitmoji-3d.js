@@ -40,7 +40,7 @@ Bitmoji3d.attributes.add('stateAnimMappings', {
     }],
     array: true
 });
-
+Bitmoji3d.attributes.add('rotateSpeed', {type: 'number', default: 30});
 
 // Face animation ids
 Bitmoji3d.faces = {
@@ -179,6 +179,8 @@ Bitmoji3d.prototype.update = function(dt) {
     if (this._faceTexturesLoaded) {
         this._updateFaces(dt);
     }
+
+    this.entity.rotate(0, this.rotateSpeed * dt, 0);
 };
 
 
