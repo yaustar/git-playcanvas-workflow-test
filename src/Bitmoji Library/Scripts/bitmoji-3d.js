@@ -61,6 +61,7 @@ Bitmoji3d.faces = {
 
 // initialize code called once per entity
 Bitmoji3d.prototype.initialize = function() {
+    console.log('hello')
     var self = this;
 
     this._log = new Log('[Bitmoji3d]');
