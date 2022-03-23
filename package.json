@@ -10,6 +10,7 @@
     "playcanvas-sync": "git+https://github.com/playcanvas/playcanvas-sync.git"
   },
   "scripts": {
-    "clean-pull": "node node_modules/playcanvas-sync/pcsync.js pullAll --yes"
+    "clean-pull": "node node_modules/playcanvas-sync/pcsync.js pullAll --yes",
+    "push-launch": "node node_modules/playcanvas-sync/pcsync.js pushAll --yes && open https://launch.playcanvas.com/1369257?debug=true"
   }
 }
